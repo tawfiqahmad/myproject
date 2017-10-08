@@ -1,0 +1,50 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <title>Add new movie | Jennifer Bland</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <br />
+            <H1>Question/answer forum for developers</H1>
+            <table class="table table-striped">
+                <tr>
+                    <th>name</th>
+                    <th>question</th>
+                    <th>answer</th>
+                </tr>
+                {% for movie in movies %}
+                <tr>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.imdb}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <hr>
+
+            <h1>Enter question and answers</h1>
+            <form action="/" method="POST" role='form'>
+                <div class="form-group">
+                    <label for="movieTitle">name</label>
+                    <input type="text" class="form-control" name="movieTitle" id="movietTitle" placeholder="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="movieYear">question</label>
+                    <input type="text" class="form-control" name="movieYear" id="movieYear" placeholder="question" required>
+                </div>
+                <div class="form-group">
+                    <label for="movieIMDB">answer</label>
+                   <input type="text" class="form-control" name="movieIMDB" id="movieIMDB" placeholder="answer" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </body>
+</html>
